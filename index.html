@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Cumple, Alexander!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url('https://www.transparenttextures.com/patterns/brushed-alum.png'), #88c9f9;
+      font-family: 'Press Start 2P', cursive;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .mario {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+    }
+
+    .message-box {
+      background-color: #fff8c4;
+      border: 4px solid #000;
+      padding: 20px;
+      max-width: 600px;
+      text-align: center;
+      font-size: 12px;
+      display: none;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      animation: popup 0.5s ease;
+    }
+
+    @keyframes popup {
+      from { transform: scale(0.5) translateX(-50%); opacity: 0; }
+      to { transform: scale(1) translateX(-50%); opacity: 1; }
+    }
+
+    .cloud {
+      position: absolute;
+      top: 20px;
+      width: 100px;
+      animation: float 10s linear infinite;
+    }
+
+    .cloud:nth-child(2) { left: 10%; }
+    .cloud:nth-child(3) { left: 50%; width: 120px; animation-duration: 15s; }
+    .cloud:nth-child(4) { left: 80%; width: 90px; animation-duration: 12s; }
+
+    @keyframes float {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(100vw); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body onclick="showMessage()">
+  <img src="https://upload.wikimedia.org/wikipedia/en/9/99/MarioSMBW.png" class="mario" alt="Mario" />
+  <img src="https://www.pngall.com/wp-content/uploads/4/Cartoon-Cloud-PNG-Clipart.png" class="cloud" />
+  <img src="https://www.pngall.com/wp-content/uploads/4/Cartoon-Cloud-PNG-Clipart.png" class="cloud" />
+  <img src="https://www.pngall.com/wp-content/uploads/4/Cartoon-Cloud-PNG-Clipart.png" class="cloud" />
+
+  <div class="message-box" id="message">
+    <p>
+      Que más puedo decir, a pesar de todo<br />
+      le deseo un año más lleno de minutos de amor,<br />
+      días de felicidad y 12 meses de mucha alegría.<br /><br />
+      <strong>Feliz cumpleaños, Alexander!</strong>
+    </p>
+  </div>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById('message');
+      if (msg.style.display !== 'block') {
+        msg.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
